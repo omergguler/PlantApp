@@ -8,9 +8,11 @@ import {
   Dimensions,
   TouchableOpacity,
 } from "react-native";
-
+import { RFValue } from "react-native-responsive-fontsize";
 const screenWidth = Dimensions.get("window").width;
-const imageHeight = (screenWidth * 510) / 375;
+const { width, height } = Dimensions.get("window");
+
+const imageHeight = Math.min((width * 510) / 375, height * 0.6);
 const WelcomeScreen = () => {
   return (
     <SafeAreaView style={styles.safeArea}>
@@ -76,11 +78,12 @@ const styles = StyleSheet.create({
     fontSize: 16,
   },
   image: {
-    width: screenWidth ,
-    height: 520,
+    width: screenWidth,
+    height: imageHeight,
     // borderColor: "black",
     // borderWidth: 1,
-    alignSelf: "center",
+    // alignSelf: "center",
+    resizeMode: "contain"
   },
   btn: {
     backgroundColor: "#28AF6E",
