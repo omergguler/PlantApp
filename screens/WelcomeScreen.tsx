@@ -8,12 +8,20 @@ import {
   Dimensions,
   TouchableOpacity,
 } from "react-native";
-import { RFValue } from "react-native-responsive-fontsize";
+import { useNavigation } from "@react-navigation/native";
+import { NativeStackNavigationProp } from "@react-navigation/native-stack";
+import { RootStackParamList } from "../navigation/navigationTypes";
 const screenWidth = Dimensions.get("window").width;
 const { width, height } = Dimensions.get("window");
 
 const imageHeight = Math.min((width * 510) / 375, height * 0.6);
 const WelcomeScreen = () => {
+  type WelcomeScreenNavProp = NativeStackNavigationProp<
+    RootStackParamList,
+    "Welcome"
+  >;
+
+  const navigation = useNavigation<WelcomeScreenNavProp>();
   return (
     <SafeAreaView style={styles.safeArea}>
       <View style={styles.topTextsContainer}>
@@ -30,7 +38,10 @@ const WelcomeScreen = () => {
       </View>
 
       <Image source={require("../assets/plant.png")} style={styles.image} />
-      <TouchableOpacity style={styles.btn}>
+      <TouchableOpacity
+        style={styles.btn}
+        onPress={() => navigation.navigate("Onboarding1")}
+      >
         <Text style={styles.btnText}>Get Started</Text>
       </TouchableOpacity>
       <Text style={styles.footer}>
@@ -45,7 +56,7 @@ const styles = StyleSheet.create({
   topTextsContainer: {
     height: 75,
     justifyContent: "space-between",
-    marginBottom: 20
+    marginBottom: 20,
   },
   titleContainer: {
     display: "flex",
@@ -83,7 +94,7 @@ const styles = StyleSheet.create({
     // borderColor: "black",
     // borderWidth: 1,
     // alignSelf: "center",
-    resizeMode: "contain"
+    resizeMode: "contain",
   },
   btn: {
     backgroundColor: "#28AF6E",
