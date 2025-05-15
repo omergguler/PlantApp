@@ -8,36 +8,35 @@ import {
   Dimensions,
   TouchableOpacity,
 } from "react-native";
-import { useNavigation } from "@react-navigation/native";
-import { NativeStackNavigationProp } from "@react-navigation/native-stack";
-import { RootStackParamList } from "../navigation/navigationTypes";
 const screenWidth = Dimensions.get("window").width;
 const { width, height } = Dimensions.get("window");
 
 const imageHeight = Math.min((width * 530) / 375, height * 0.6);
-const Onboarding1 = () => {
-  type Onboarding1ScreenNavProp = NativeStackNavigationProp<
-    RootStackParamList,
-    "Onboarding1"
-  >;
-  const navigation = useNavigation<Onboarding1ScreenNavProp>();
-
+const Onboarding2 = () => {
   return (
     <SafeAreaView style={styles.safeArea}>
       <View style={styles.titleContainer}>
         <Text style={styles.title}>
-          Take a photo to <Text style={styles.titleBold}>identify</Text> the
-          plant!
+          Get plant <Text style={styles.titleBold}>care guides</Text>
         </Text>
       </View>
+      <View style={styles.canvas}>
+        <Image source={require("../assets/leaves.png")} style={styles.leaves} />
+        <View style={styles.imageContainer}>
+          <Image
+            source={require("../assets/phone2.png")}
+            style={styles.image}
+          />
+          <Image source={require("../assets/icons.png")} style={styles.icons} />
+        </View>
+      </View>
 
-      <Image source={require("../assets/phone1.png")} style={styles.image} />
-      <TouchableOpacity style={styles.btn} onPress={() => navigation.navigate("Onboarding2")}>
+      <TouchableOpacity style={styles.btn}>
         <Text style={styles.btnText}>Continue</Text>
       </TouchableOpacity>
       <View style={styles.pagination}>
-        <View style={[styles.dot, styles.activeDot]} />
         <View style={styles.dot} />
+        <View style={[styles.dot, styles.activeDot]} />
         <View style={styles.dot} />
       </View>
     </SafeAreaView>
@@ -45,6 +44,48 @@ const Onboarding1 = () => {
 };
 
 const styles = StyleSheet.create({
+  canvas: {
+    height: imageHeight + 20,
+    // borderWidth: 1,
+    // borderColor: "black",
+    position: "relative",
+    overflow: "hidden",
+  },
+  imageContainer: {
+    position: "absolute",
+    alignSelf: "center",
+    top: "10%",
+    resizeMode: "contain",
+    width: screenWidth * 0.8,
+    // borderWidth: 5,
+    // borderColor: "orange",
+  },
+  image: {
+    width: screenWidth * 0.8,
+    height: imageHeight + 20,
+    // borderWidth: 5,
+    // borderColor: "red",
+    alignSelf: "center",
+    resizeMode: "contain",
+  },
+  leaves: {
+    position: "absolute",
+    width: screenWidth,
+    height: imageHeight + 20,
+    // borderWidth: 1,
+    // borderColor: "green",
+    resizeMode: "contain",
+  },
+  icons: {
+    position: "absolute",
+    width: 220,
+    height: 220,
+    // borderWidth: 3,
+    // borderColor: "yellow",
+    resizeMode: "contain",
+    top: -75,
+    left: 110
+  },
   titleContainer: {
     display: "flex",
     flexDirection: "row",
@@ -65,15 +106,13 @@ const styles = StyleSheet.create({
     fontSize: 28,
     color: "#13231B",
   },
-
-  image: {
+  imageCropContainer: {
     width: screenWidth,
-    height: imageHeight + 20,
-    // borderColor: "black",
-    // borderWidth: 1,
-    // alignSelf: "center",
-    resizeMode: "contain",
+    height: imageHeight * 0.93,
+    overflow: "hidden",
+    borderRadius: 16,
   },
+
   btn: {
     backgroundColor: "#28AF6E",
     marginHorizontal: 24,
@@ -116,4 +155,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Onboarding1;
+export default Onboarding2;

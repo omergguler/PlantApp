@@ -4,6 +4,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { RootStackParamList } from './navigationTypes';
 import WelcomeScreen from '../screens/WelcomeScreen';
 import Onboarding1 from '../screens/Onboarding1';
+import Onboarding2 from '../screens/Onboarding2';
 const Stack = createNativeStackNavigator<RootStackParamList>();
 
 const SimpleComponent = () => {
@@ -11,6 +12,7 @@ const SimpleComponent = () => {
     <Stack.Navigator screenOptions={{ headerShown: false }}>
       <Stack.Screen name="Welcome" component={WelcomeScreen} />
       <Stack.Screen name="Onboarding1" component={Onboarding1} />
+      <Stack.Screen name="Onboarding2" component={Onboarding2} />
     </Stack.Navigator>
   );
 };
