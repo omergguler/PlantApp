@@ -8,11 +8,19 @@ import {
   Dimensions,
   TouchableOpacity,
 } from "react-native";
+import { useNavigation } from "@react-navigation/native";
+import { NativeStackNavigationProp } from "@react-navigation/native-stack";
+import { RootStackParamList } from "../navigation/navigationTypes";
 const screenWidth = Dimensions.get("window").width;
 const { width, height } = Dimensions.get("window");
 
 const imageHeight = Math.min((width * 530) / 375, height * 0.6);
 const Onboarding2 = () => {
+    type Onboarding2ScreenNavProp = NativeStackNavigationProp<
+        RootStackParamList,
+        "Onboarding2"
+      >;
+      const navigation = useNavigation<Onboarding2ScreenNavProp>();
   return (
     <SafeAreaView style={styles.safeArea}>
       <View style={styles.titleContainer}>
@@ -31,7 +39,7 @@ const Onboarding2 = () => {
         </View>
       </View>
 
-      <TouchableOpacity style={styles.btn}>
+      <TouchableOpacity style={styles.btn} onPress={() => navigation.navigate("Paywall")}>
         <Text style={styles.btnText}>Continue</Text>
       </TouchableOpacity>
       <View style={styles.pagination}>
