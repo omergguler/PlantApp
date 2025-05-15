@@ -33,7 +33,8 @@ const styles = StyleSheet.create({
     backgroundColor: "#23302a",
     borderRadius: 14,
     padding: 14,
-    justifyContent: "space-between"
+    justifyContent: "space-between",
+    marginRight: 10
   },
   iconContainer: {
     width: 36,
