@@ -34,7 +34,7 @@ if (currentHour < 12) {
   timeOfDay = "Evening";
 }
 const HomePage = () => {
-  console.log(currentHour);
+  
   const [questions, setQuestions] = useState([]);
   const [categories, setCategories] = useState([]);
 
@@ -47,8 +47,7 @@ const HomePage = () => {
       "VirtualizedLists should never be nested", // my ScrollView and FlatList has different directions, this warning is not my concern
     ]);
   }, []);
-  console.log(questions);
-  console.log(categories);
+  
 
   return (
     <SafeAreaView style={{ flex: 1 }}>
@@ -116,7 +115,7 @@ const HomePage = () => {
           </TouchableOpacity>
 
           {/* // questions */}
-          <View style={styles.questionsContainer}>
+          <View>
             <Text style={styles.questionsContainerTitle}>Get Started</Text>
             <FlatList<QuestionItemProps>
               horizontal
@@ -192,17 +191,12 @@ const styles = StyleSheet.create({
   },
   rightIcon: {
     flex: 1,
-    borderColor: "white",
-    borderWidth: 1,
+
   },
   rightIconContainer: {
     flex: 1,
     alignItems: "flex-end",
     paddingRight: 12,
-  },
-  questionsContainer: {
-    borderWidth: 1,
-    borderColor: "black",
   },
   questionsContainerTitle: {
     marginLeft: 24,

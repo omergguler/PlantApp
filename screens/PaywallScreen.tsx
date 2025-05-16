@@ -315,8 +315,6 @@ const styles = StyleSheet.create({
     fontWeight: "300",
     fontSize: 10,
     color: "#FFFFFF85",
-    borderWidth: 1,
-    borderColor: "white",
   },
   footerItems: {
     fontSize: 12,
@@ -328,8 +326,6 @@ const styles = StyleSheet.create({
 
   lastBtnAndFooterContainer: {
     flex: 1,
-    borderWidth: 1,
-    borderColor: "red",
     justifyContent: "flex-end",
     paddingBottom: lastBtnAndFooterContainerPadding,
   },

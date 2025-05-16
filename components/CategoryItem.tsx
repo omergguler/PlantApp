@@ -20,8 +20,6 @@ const styles = StyleSheet.create({
   container: {
     width: imageWidth,
     height: imageWidth,
-    borderWidth: 1,
-    borderColor: "black",
     borderRadius: 12,
     resizeMode: "cover",
     marginBottom: 24,
@@ -30,11 +28,10 @@ const styles = StyleSheet.create({
   image: {
     width: imageWidth,
     height: imageWidth,
+    borderRadius: 12,
   },
   titleContainer: {
     width: imageWidth / 2 + 40,
-    borderWidth: 1,
-    borderColor: "black",
     position: "absolute",
     top: 8,
     left: 8,
