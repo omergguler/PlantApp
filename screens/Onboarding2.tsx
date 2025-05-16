@@ -16,11 +16,11 @@ const { width, height } = Dimensions.get("window");
 
 const imageHeight = Math.min((width * 530) / 375, height * 0.6);
 const Onboarding2 = () => {
-    type Onboarding2ScreenNavProp = NativeStackNavigationProp<
-        RootStackParamList,
-        "Onboarding2"
-      >;
-      const navigation = useNavigation<Onboarding2ScreenNavProp>();
+  type Onboarding2ScreenNavProp = NativeStackNavigationProp<
+    RootStackParamList,
+    "Onboarding2"
+  >;
+  const navigation = useNavigation<Onboarding2ScreenNavProp>();
   return (
     <SafeAreaView style={styles.safeArea}>
       <View style={styles.titleContainer}>
@@ -39,7 +39,10 @@ const Onboarding2 = () => {
         </View>
       </View>
 
-      <TouchableOpacity style={styles.btn} onPress={() => navigation.navigate("Paywall")}>
+      <TouchableOpacity
+        style={styles.btn}
+        onPress={() => navigation.navigate("Paywall")}
+      >
         <Text style={styles.btnText}>Continue</Text>
       </TouchableOpacity>
       <View style={styles.pagination}>
@@ -54,8 +57,6 @@ const Onboarding2 = () => {
 const styles = StyleSheet.create({
   canvas: {
     height: imageHeight + 20,
-    // borderWidth: 1,
-    // borderColor: "black",
     position: "relative",
     overflow: "hidden",
   },
@@ -65,14 +66,10 @@ const styles = StyleSheet.create({
     top: "10%",
     resizeMode: "contain",
     width: screenWidth * 0.8,
-    // borderWidth: 5,
-    // borderColor: "orange",
   },
   image: {
     width: screenWidth * 0.8,
     height: imageHeight + 20,
-    // borderWidth: 5,
-    // borderColor: "red",
     alignSelf: "center",
     resizeMode: "contain",
   },
@@ -80,29 +77,22 @@ const styles = StyleSheet.create({
     position: "absolute",
     width: screenWidth,
     height: imageHeight + 20,
-    // borderWidth: 1,
-    // borderColor: "green",
     resizeMode: "contain",
   },
   icons: {
     position: "absolute",
     width: 220,
     height: 220,
-    // borderWidth: 3,
-    // borderColor: "yellow",
     resizeMode: "contain",
     top: -75,
-    left: 110
+    left: 110,
   },
   titleContainer: {
     display: "flex",
     flexDirection: "row",
     width: "80%",
-    // borderWidth: 1,
-    // borderColor: "black",
     left: 24,
     height: 75,
-    // marginBottom: 20,
   },
   title: {
     fontWeight: "500",
@@ -137,8 +127,6 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "center",
     marginVertical: 20,
-    // borderColor: "black",
-    // borderWidth: 1,
     alignItems: "center",
     marginTop: 20,
   },
@@ -159,7 +147,6 @@ const styles = StyleSheet.create({
   safeArea: {
     flex: 1,
     justifyContent: "center",
-    // backgroundColor: "green"
   },
 });
 

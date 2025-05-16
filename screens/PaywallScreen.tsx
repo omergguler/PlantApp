@@ -110,7 +110,7 @@ const PaywallScreen = () => {
         </View>
       </ImageBackground>
       <View style={styles.plansContainer}>
-        <View style={styles.firstTwoButtonsContainer}>
+        <View>
           <TouchableOpacity
             style={[styles.btn, selectedPlan === "month" && styles.selectedBtn]}
             onPress={() => setSelectedPlan("month")}
@@ -256,14 +256,10 @@ const styles = StyleSheet.create({
     position: "relative",
   },
   featuresContainer: {
-    // borderWidth: 1,
-    // borderColor: "white",
     marginTop: 15,
   },
   titlesContainer: {
     marginLeft: 24,
-    // borderWidth: 1,
-    // borderColor: "white",
   },
   titleBold: {
     fontWeight: "800",
@@ -286,15 +282,11 @@ const styles = StyleSheet.create({
     width: width,
     height: imageHeight - 100, //390
     justifyContent: "flex-end",
-    // borderWidth: 1,
-    // borderColor: "white",
     paddingBottom: 16,
   },
   plansContainer: {
     backgroundColor: "#101e17",
     flex: 1,
-    // borderWidth: 1,
-    // borderColor: "white",
     paddingTop: 0,
   },
   btn: {
@@ -302,7 +294,6 @@ const styles = StyleSheet.create({
     marginHorizontal: 24,
     display: "flex",
     flexDirection: "row",
-    // justifyContent: "center",
     alignItems: "center",
     borderRadius: 14,
     height: buttonHeight,
@@ -334,9 +325,7 @@ const styles = StyleSheet.create({
     textAlign: "center",
     marginTop: 8,
   },
-  firstTwoButtonsContainer: {
-    // marginTop: 16,
-  },
+
   lastBtnAndFooterContainer: {
     flex: 1,
     borderWidth: 1,
@@ -391,7 +380,6 @@ const styles = StyleSheet.create({
     borderTopRightRadius: 14,
     borderColor: "#FFFFFF4D",
     backgroundColor: "#FFFFFF4D",
-    // borderWidth: 1,
     padding: 6,
   },
   activeDiscount: {

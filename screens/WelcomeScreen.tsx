@@ -62,8 +62,6 @@ const styles = StyleSheet.create({
     display: "flex",
     flexDirection: "row",
     width: "80%",
-    // borderWidth: 1,
-    // borderColor: "black",
     left: 24,
   },
   title: {
@@ -79,8 +77,6 @@ const styles = StyleSheet.create({
   subTitleContainer: {
     width: "80%",
     left: 24,
-    // borderWidth: 1,
-    // borderColor: "black",
   },
   subTitle: {
     alignSelf: "center",
@@ -91,9 +87,6 @@ const styles = StyleSheet.create({
   image: {
     width: screenWidth,
     height: imageHeight,
-    // borderColor: "black",
-    // borderWidth: 1,
-    // alignSelf: "center",
     resizeMode: "contain",
   },
   btn: {
@@ -118,7 +111,6 @@ const styles = StyleSheet.create({
   safeArea: {
     flex: 1,
     justifyContent: "center",
-    // backgroundColor: "green"
   },
 });
 

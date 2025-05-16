@@ -32,8 +32,6 @@ const styles = StyleSheet.create({
     borderRadius: 12,
   },
   inputStyle: {
-    // borderColor: "black",
-    // borderWidth: 1,
     flex: 1,
     fontSize: 18,
   },

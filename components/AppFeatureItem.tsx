@@ -26,8 +26,6 @@ const AppFeatureItem = ({ icon, title, subTitle }: AppFeatureItemProps) => {
 
 const styles = StyleSheet.create({
   container: {
-    // borderWidth: 1,
-    // borderColor: "white",
     width: finalItemWidth,
     height: finalItemHeight,
     backgroundColor: "#23302a",
@@ -47,8 +45,6 @@ const styles = StyleSheet.create({
   textsContainer: {
     height: 46 * scaleFactor,
     justifyContent: "space-between",
-    // borderWidth: 1,
-    // borderColor: "white",
   },
   title: {
     fontWeight: "500",

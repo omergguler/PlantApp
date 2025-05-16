@@ -49,11 +49,8 @@ const styles = StyleSheet.create({
     display: "flex",
     flexDirection: "row",
     width: "80%",
-    // borderWidth: 1,
-    // borderColor: "black",
     left: 24,
     height: 75,
-    // marginBottom: 20,
   },
   title: {
     fontWeight: "500",
@@ -69,9 +66,6 @@ const styles = StyleSheet.create({
   image: {
     width: screenWidth,
     height: imageHeight + 20,
-    // borderColor: "black",
-    // borderWidth: 1,
-    // alignSelf: "center",
     resizeMode: "contain",
   },
   btn: {
@@ -90,8 +84,6 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "center",
     marginVertical: 20,
-    // borderColor: "black",
-    // borderWidth: 1,
     alignItems: "center",
     marginTop: 20,
   },
@@ -112,7 +104,6 @@ const styles = StyleSheet.create({
   safeArea: {
     flex: 1,
     justifyContent: "center",
-    // backgroundColor: "green"
   },
 });
 

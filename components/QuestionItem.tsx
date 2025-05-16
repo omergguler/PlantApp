@@ -25,8 +25,6 @@ const styles = StyleSheet.create({
   container: {
     width: 240,
     height: 164,
-    // borderWidth: 1,
-    // borderColor: "black",
     borderRadius: 12,
     overflow: "hidden",
     position: "relative",
@@ -36,12 +34,9 @@ const styles = StyleSheet.create({
     width: "100%",
     height: 164,
     resizeMode: "center",
-    // borderRadius: 12,
   },
   questionTextContainer: {
     position: "absolute",
-    // borderWidth: 1,
-    // borderColor: "black",
     bottom: 8,
     left: 0,
     width: 240,

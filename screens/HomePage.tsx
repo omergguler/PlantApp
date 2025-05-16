@@ -59,7 +59,6 @@ const HomePage = () => {
         </View>
         <ImageBackground
           source={require("../assets/searchBarBackground.png")}
-          style={styles.searchBarContainer}
         >
           <SearchBar />
         </ImageBackground>
@@ -112,7 +111,6 @@ const HomePage = () => {
                 name="right"
                 size={24}
                 color="#D9A846"
-                //   style={styles.rightIcon}
               />
             </View>
           </TouchableOpacity>
@@ -172,10 +170,6 @@ const styles = StyleSheet.create({
     fontSize: 24,
     color: "#13231B",
   },
-  searchBarContainer: {
-    // borderWidth: 2,
-    // borderColor: "black",
-  },
   upgradeBtn: {
     backgroundColor: "#24201A",
     marginHorizontal: 24,
@@ -202,8 +196,6 @@ const styles = StyleSheet.create({
     borderWidth: 1,
   },
   rightIconContainer: {
-    // borderColor: "white",
-    // borderWidth: 1,
     flex: 1,
     alignItems: "flex-end",
     paddingRight: 12,
@@ -211,8 +203,6 @@ const styles = StyleSheet.create({
   questionsContainer: {
     borderWidth: 1,
     borderColor: "black",
-    // alignItems: "center",
-    // justifyContent: "center"
   },
   questionsContainerTitle: {
     marginLeft: 24,
