@@ -208,6 +208,7 @@ const styles = StyleSheet.create({
   categoriesContainer: {
     marginHorizontal: 24,
     paddingTop: 24,
+    marginBottom: 150
   },
 });
 
