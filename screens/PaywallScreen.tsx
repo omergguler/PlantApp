@@ -17,6 +17,12 @@ import MaterialCommunityIcons from "@expo/vector-icons/MaterialCommunityIcons";
 import Entypo from "@expo/vector-icons/Entypo";
 import { LinearGradient } from "expo-linear-gradient";
 const { width, height } = Dimensions.get("window");
+import { useNavigation } from "@react-navigation/native";
+import { NativeStackNavigationProp } from "@react-navigation/native-stack";
+import { RootStackParamList } from "../navigation/navigationTypes";
+import { useDispatch } from "react-redux";
+import { completeOnboarding } from "../services/userSlice";
+import { CommonActions } from "@react-navigation/native";
 
 // pre-determined sizes for smal screens
 let buttonHeight = 56;
@@ -50,11 +56,29 @@ const featuresData = [
 ];
 
 const PaywallScreen = () => {
+  type PaywallScreenNavProp = NativeStackNavigationProp<
+    RootStackParamList,
+    "Paywall"
+  >;
+  const navigation = useNavigation<PaywallScreenNavProp>();
+  const dispatch = useDispatch();
   const [selectedPlan, setSelectedPlan] = useState("year");
 
   return (
     <View style={styles.container}>
-      <TouchableOpacity style={styles.closeBtn}>
+      <TouchableOpacity
+        style={styles.closeBtn}
+        onPress={() => {
+          dispatch(completeOnboarding());
+
+          navigation.dispatch(
+            CommonActions.reset({
+              index: 0,
+              routes: [{ name: "Home" }],
+            })
+          );
+        }}
+      >
         <Entypo name="cross" size={24} color="white" />
       </TouchableOpacity>
       <ImageBackground
@@ -394,8 +418,8 @@ const styles = StyleSheet.create({
     zIndex: 1,
     borderRadius: 15,
     justifyContent: "center",
-    alignItems: "center"
-  }
+    alignItems: "center",
+  },
 });
 
 export default PaywallScreen;
